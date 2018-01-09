@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C484061B2004A4DB007275BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484061A2004A4DB007275BF /* AppDelegate.swift */; };
-		C484061D2004A4DB007275BF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484061C2004A4DB007275BF /* ViewController.swift */; };
+		C484061D2004A4DB007275BF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484061C2004A4DB007275BF /* MainVC.swift */; };
 		C48406202004A4DB007275BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C484061E2004A4DB007275BF /* Main.storyboard */; };
 		C48406222004A4DB007275BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48406212004A4DB007275BF /* Assets.xcassets */; };
 		C48406252004A4DB007275BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48406232004A4DB007275BF /* LaunchScreen.storyboard */; };
@@ -17,7 +17,7 @@
 /* Begin PBXFileReference section */
 		C48406172004A4DB007275BF /* EWO Plats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EWO Plats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484061A2004A4DB007275BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C484061C2004A4DB007275BF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		C484061C2004A4DB007275BF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C484061F2004A4DB007275BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C48406212004A4DB007275BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C48406242004A4DB007275BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -54,14 +54,38 @@
 		C48406192004A4DB007275BF /* EWO Plats */ = {
 			isa = PBXGroup;
 			children = (
+				C484062E2004AB48007275BF /* Service */,
+				C484062D2004AB35007275BF /* View */,
+				C484062C2004AB1D007275BF /* Model */,
 				C484061A2004A4DB007275BF /* AppDelegate.swift */,
-				C484061C2004A4DB007275BF /* ViewController.swift */,
 				C484061E2004A4DB007275BF /* Main.storyboard */,
 				C48406212004A4DB007275BF /* Assets.xcassets */,
 				C48406232004A4DB007275BF /* LaunchScreen.storyboard */,
 				C48406262004A4DB007275BF /* Info.plist */,
 			);
 			path = "EWO Plats";
+			sourceTree = "<group>";
+		};
+		C484062C2004AB1D007275BF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		C484062D2004AB35007275BF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C484061C2004A4DB007275BF /* MainVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C484062E2004AB48007275BF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,7 +160,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C484061D2004A4DB007275BF /* ViewController.swift in Sources */,
+				C484061D2004A4DB007275BF /* MainVC.swift in Sources */,
 				C484061B2004A4DB007275BF /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
