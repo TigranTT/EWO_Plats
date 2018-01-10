@@ -12,6 +12,7 @@
 		C48406202004A4DB007275BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C484061E2004A4DB007275BF /* Main.storyboard */; };
 		C48406222004A4DB007275BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48406212004A4DB007275BF /* Assets.xcassets */; };
 		C48406252004A4DB007275BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48406232004A4DB007275BF /* LaunchScreen.storyboard */; };
+		C4884E302005892000B1803B /* ButtonsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4884E2F2005892000B1803B /* ButtonsMapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C48406212004A4DB007275BF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C48406242004A4DB007275BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C48406262004A4DB007275BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C4884E2F2005892000B1803B /* ButtonsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsMapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 		C484062C2004AB1D007275BF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				C4884E2F2005892000B1803B /* ButtonsMapView.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -160,6 +163,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4884E302005892000B1803B /* ButtonsMapView.swift in Sources */,
 				C484061D2004A4DB007275BF /* MainVC.swift in Sources */,
 				C484061B2004A4DB007275BF /* AppDelegate.swift in Sources */,
 			);
