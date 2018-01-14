@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C4570E7B20088A650019277A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C48406172004A4DB007275BF /* EWO Plats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EWO Plats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484061A2004A4DB007275BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C484061C2004A4DB007275BF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -37,11 +38,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C4570E7A20088A640019277A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C4570E7B20088A650019277A /* MapKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C484060E2004A4DB007275BF = {
 			isa = PBXGroup;
 			children = (
 				C48406192004A4DB007275BF /* EWO Plats */,
 				C48406182004A4DB007275BF /* Products */,
+				C4570E7A20088A640019277A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

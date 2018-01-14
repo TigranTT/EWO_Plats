@@ -49,68 +49,85 @@
                                     <constraint firstAttribute="height" constant="102" id="OLf-K0-Qe1"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8a6-9N-noc">
-                                <rect key="frame" x="202.5" y="67" width="363" height="36"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="65y-x9-8kd">
+                                <rect key="frame" x="203" y="67" width="363" height="74"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaZ-MB-GIU" customClass="ButtonsMapView" customModule="EWO_Plats" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="119" height="36"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="Map"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="8a6-9N-noc">
+                                        <rect key="frame" x="0.0" y="0.0" width="363" height="36"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AaZ-MB-GIU" customClass="ButtonsMapView" customModule="EWO_Plats" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="119" height="36"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Map"/>
+                                                <connections>
+                                                    <action selector="mapRegularViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rmy-kd-oRc"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejz-KI-DWe" customClass="ButtonsMapView" customModule="EWO_Plats" customModuleProvider="target">
+                                                <rect key="frame" x="122" y="0.0" width="119" height="36"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="Satellite"/>
+                                                <connections>
+                                                    <action selector="mapSateliteViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p29-9O-Odp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCx-9T-iwK" customClass="ButtonsMapView" customModule="EWO_Plats" customModuleProvider="target">
+                                                <rect key="frame" x="244" y="0.0" width="119" height="36"/>
+                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                <state key="normal" title="3D"/>
+                                                <connections>
+                                                    <action selector="map3DViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1y8-9e-Tgp"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="AjV-EU-xK2"/>
+                                            <constraint firstAttribute="width" constant="363" id="XxI-Td-0hc"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="js2-Dv-QHS"/>
+                                            <constraint firstAttribute="width" constant="263" id="zjP-KC-49B"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="XxI-Td-0hc"/>
+                                                <exclude reference="js2-Dv-QHS"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="heightClass=regular-widthClass=regular">
+                                            <mask key="constraints">
+                                                <exclude reference="AjV-EU-xK2"/>
+                                                <include reference="XxI-Td-0hc"/>
+                                                <include reference="js2-Dv-QHS"/>
+                                                <exclude reference="zjP-KC-49B"/>
+                                            </mask>
+                                        </variation>
+                                    </stackView>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" borderStyle="roundedRect" placeholder="Search for a place or address" clearsOnBeginEditing="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="FGD-rj-eGr">
+                                        <rect key="frame" x="0.0" y="38" width="363" height="36"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="textColor"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
-                                            <action selector="mapRegularViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rmy-kd-oRc"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="VxY-Ba-c5z"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ejz-KI-DWe" customClass="ButtonsMapView" customModule="EWO_Plats" customModuleProvider="target">
-                                        <rect key="frame" x="122" y="0.0" width="119" height="36"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="Satellite"/>
-                                        <connections>
-                                            <action selector="mapSateliteViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p29-9O-Odp"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCx-9T-iwK" customClass="ButtonsMapView" customModule="EWO_Plats" customModuleProvider="target">
-                                        <rect key="frame" x="244" y="0.0" width="119" height="36"/>
-                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="3D"/>
-                                        <connections>
-                                            <action selector="map3DViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1y8-9e-Tgp"/>
-                                        </connections>
-                                    </button>
+                                    </textField>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="AjV-EU-xK2"/>
-                                    <constraint firstAttribute="width" constant="363" id="XxI-Td-0hc"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="js2-Dv-QHS"/>
-                                    <constraint firstAttribute="width" constant="263" id="zjP-KC-49B"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="XxI-Td-0hc"/>
-                                        <exclude reference="js2-Dv-QHS"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=regular-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="AjV-EU-xK2"/>
-                                        <include reference="XxI-Td-0hc"/>
-                                        <include reference="js2-Dv-QHS"/>
-                                        <exclude reference="zjP-KC-49B"/>
-                                    </mask>
-                                </variation>
+                                <color key="backgroundColor" red="0.25331138959999999" green="0.25331138959999999" blue="0.25331138959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.019607843140000001" green="0.40784313729999999" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="8a6-9N-noc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Xd-Uv-BsM"/>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="43H-rt-y6V"/>
+                            <constraint firstItem="65y-x9-8kd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="5hh-4V-AUC"/>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6rS-O2-roh"/>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hcf-4y-qt5"/>
+                            <constraint firstItem="65y-x9-8kd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aGI-Qc-5JZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u6F-GS-MaD" secondAttribute="trailing" constant="5" id="eRG-iz-TfC"/>
-                            <constraint firstItem="8a6-9N-noc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="q4r-ND-ELY"/>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uSD-8t-zET"/>
                             <constraint firstItem="u6F-GS-MaD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="55" id="wKA-hq-Qy5"/>
                         </constraints>
@@ -125,11 +142,12 @@
                         <barButtonItem key="leftBarButtonItem" systemItem="play" id="wWf-om-5Du"/>
                     </navigationItem>
                     <connections>
-                        <outlet property="hiddenButtons" destination="8a6-9N-noc" id="IK7-bV-9H7"/>
+                        <outlet property="hiddenButtons" destination="65y-x9-8kd" id="TZZ-yX-KWc"/>
                         <outlet property="map3DViewButton" destination="uCx-9T-iwK" id="PjI-Ya-40r"/>
                         <outlet property="mapRegularViewButton" destination="AaZ-MB-GIU" id="cuS-Hg-eSG"/>
                         <outlet property="mapSateliteViewButton" destination="ejz-KI-DWe" id="05S-Rs-CFv"/>
                         <outlet property="mapView" destination="dhm-yh-bTs" id="s3A-xX-CUL"/>
+                        <outlet property="searchLocationTxt" destination="FGD-rj-eGr" id="fLx-FV-ToN"/>
                         <outlet property="showUserLocationButton" destination="CYS-qk-eVm" id="qw5-v8-f9d"/>
                     </connections>
                 </viewController>
