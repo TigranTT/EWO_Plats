@@ -118,6 +118,10 @@
                                 <color key="backgroundColor" red="0.25331138959999999" green="0.25331138959999999" blue="0.25331138959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="I5H-9J-QrV">
+                                <rect key="frame" x="366" y="494" width="37" height="37"/>
+                                <color key="color" red="0.25331138959999999" green="0.25331138959999999" blue="0.25331138959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.019607843140000001" green="0.40784313729999999" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -126,6 +130,8 @@
                             <constraint firstItem="65y-x9-8kd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="5hh-4V-AUC"/>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6rS-O2-roh"/>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hcf-4y-qt5"/>
+                            <constraint firstItem="I5H-9J-QrV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hr8-gY-NXS"/>
+                            <constraint firstItem="I5H-9J-QrV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XpJ-cg-OrS"/>
                             <constraint firstItem="65y-x9-8kd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aGI-Qc-5JZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="u6F-GS-MaD" secondAttribute="trailing" constant="5" id="eRG-iz-TfC"/>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uSD-8t-zET"/>
@@ -139,9 +145,15 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="EWO Plats" id="bzy-99-6xW">
-                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="wWf-om-5Du"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="yaM-s8-wD7"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="wWf-om-5Du">
+                            <connections>
+                                <action selector="openDocumentButton:" destination="BYZ-38-t0r" id="nH4-3t-8Gv"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="I5H-9J-QrV" id="jQh-yY-cAe"/>
                         <outlet property="hiddenButtons" destination="65y-x9-8kd" id="TZZ-yX-KWc"/>
                         <outlet property="map3DViewButton" destination="uCx-9T-iwK" id="PjI-Ya-40r"/>
                         <outlet property="mapRegularViewButton" destination="AaZ-MB-GIU" id="cuS-Hg-eSG"/>
@@ -149,11 +161,53 @@
                         <outlet property="mapView" destination="dhm-yh-bTs" id="s3A-xX-CUL"/>
                         <outlet property="searchLocationTxt" destination="FGD-rj-eGr" id="fLx-FV-ToN"/>
                         <outlet property="showUserLocationButton" destination="CYS-qk-eVm" id="qw5-v8-f9d"/>
+                        <segue destination="MEu-kL-nUH" kind="show" identifier="segueToDocumentVC" id="7XX-QC-8nK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="480.46875" y="278.90625"/>
+            <point key="canvasLocation" x="481" y="279"/>
+        </scene>
+        <!--DocumentVC-->
+        <scene sceneID="mfU-Sz-W42">
+            <objects>
+                <viewController id="MEu-kL-nUH" customClass="DocumentVC" customModule="EWO_Plats" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M7b-aM-WEl">
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h5Z-Rm-0P4">
+                                <rect key="frame" x="0.0" y="64" width="768" height="960"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="9o3-yZ-9c1">
+                                <rect key="frame" x="366" y="494" width="37" height="37"/>
+                                <color key="color" red="0.35294117650000001" green="0.35294117650000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h5Z-Rm-0P4" firstAttribute="top" secondItem="2AW-iq-Rnx" secondAttribute="top" id="Pl3-eq-EhL"/>
+                            <constraint firstItem="h5Z-Rm-0P4" firstAttribute="trailing" secondItem="2AW-iq-Rnx" secondAttribute="trailing" id="S1h-tU-01R"/>
+                            <constraint firstItem="9o3-yZ-9c1" firstAttribute="centerY" secondItem="M7b-aM-WEl" secondAttribute="centerY" id="fUv-MN-BCe"/>
+                            <constraint firstItem="9o3-yZ-9c1" firstAttribute="centerX" secondItem="M7b-aM-WEl" secondAttribute="centerX" id="h49-BK-hpU"/>
+                            <constraint firstItem="h5Z-Rm-0P4" firstAttribute="leading" secondItem="2AW-iq-Rnx" secondAttribute="leading" id="j4I-eq-XjJ"/>
+                            <constraint firstItem="h5Z-Rm-0P4" firstAttribute="bottom" secondItem="2AW-iq-Rnx" secondAttribute="bottom" id="oTR-43-joj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2AW-iq-Rnx"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="9o3-yZ-9c1" id="7ux-Ex-0uF"/>
+                        <outlet property="webView" destination="h5Z-Rm-0P4" id="2gN-MY-3Qo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dxo-is-oln" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1172.65625" y="278.90625"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9xc-iZ-j66">

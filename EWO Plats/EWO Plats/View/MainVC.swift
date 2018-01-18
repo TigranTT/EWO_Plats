@@ -19,7 +19,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     @IBOutlet weak var map3DViewButton: UIButton!
     @IBOutlet weak var hiddenButtons: UIStackView!
     @IBOutlet weak var searchLocationTxt: UITextField!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let clLocationManager = CLLocationManager()
     
@@ -81,8 +81,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     
     
     private func searchLocation(address: String) {
-        //var placeMark: CLPlacemark!
-        //let mkAnnotation = MKPointAnnotation()
+        activityIndicator.startAnimating()
         let geocoder = CLGeocoder()
         let address = address
         let span = MKCoordinateSpanMake(0.05, 0.05)
@@ -94,24 +93,13 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
                     let long = CLLocationDegrees(coordinates.longitude)
                     let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: lat, longitude: long), span)
                     self.mapView.setRegion(region, animated: true)
-                    
-                    
-//                    placeMark = placemark[0] as CLPlacemark
-//                    let lat:CLLocationDegrees = CLLocationDegrees((placeMark.location?.coordinate.latitude)!)
-//                    let long:CLLocationDegrees = CLLocationDegrees((placeMark.location?.coordinate.longitude)!)
-//                    let coordinates = CLLocationCoordinate2DMake(lat, long)
-//                    mkAnnotation.coordinate = coordinates
-//                    let region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(lat, long), span)
-//                    self.mapView.setRegion(region, animated: true)
-//                    self.mapView.addAnnotation(mkAnnotation)
-//                    mkAnnotation.title = placeMark.name
-//                    mkAnnotation.subtitle = placeMark.locality
                 }
             }else{
                 self.showAlert("oops!", message: "Location \"\(address)\" not found")
                 self.showHiddenButtons(show: true)
             }
         }
+        activityIndicator.stopAnimating()
     }
     
     private func showAlert(_ title: String, message: String) {
@@ -136,6 +124,35 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     }
     
     
+    @IBAction func openDocumentButton(_ sender: Any) {
+        performSegue(withIdentifier: "segueToDocumentVC", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToDocumentVC" {
+            let documentVC = segue.destination as! DocumentVC
+            documentVC.urlAddress = URL(string: "https://att.box.com/s/9hn9b1wno6korq3bc6i474s3ka6jnw7r")
+        }
+    }
+    
+    
+    
+    
+    
+    
+    
+    //var placeMark: CLPlacemark!
+    //let mkAnnotation = MKPointAnnotation()
+    //                    placeMark = placemark[0] as CLPlacemark
+    //                    let lat:CLLocationDegrees = CLLocationDegrees((placeMark.location?.coordinate.latitude)!)
+    //                    let long:CLLocationDegrees = CLLocationDegrees((placeMark.location?.coordinate.longitude)!)
+    //                    let coordinates = CLLocationCoordinate2DMake(lat, long)
+    //                    mkAnnotation.coordinate = coordinates
+    //                    let region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(lat, long), span)
+    //                    self.mapView.setRegion(region, animated: true)
+    //                    self.mapView.addAnnotation(mkAnnotation)
+    //                    mkAnnotation.title = placeMark.name
+    //                    mkAnnotation.subtitle = placeMark.locality
     
     
     
