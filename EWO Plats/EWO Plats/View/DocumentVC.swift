@@ -18,9 +18,13 @@ class DocumentVC: UIViewController, UIWebViewDelegate, WKUIDelegate, WKNavigatio
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let request = URLRequest(url: urlAddress!)
-        webView.load(request)
         webView.navigationDelegate = self
+        let request = URLRequest(url: urlAddress!)
+        if Reachability.isConnectedToNetwork() == false {
+            self.showAlert("Error Message", message: "Please check internet connection")
+        }else{
+            webView.load(request)
+        }
     }
     
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
@@ -28,6 +32,12 @@ class DocumentVC: UIViewController, UIWebViewDelegate, WKUIDelegate, WKNavigatio
     }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         activityIndicator.stopAnimating()
+    }
+    
+    private func showAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
     

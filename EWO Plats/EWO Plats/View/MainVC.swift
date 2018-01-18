@@ -32,6 +32,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         mapView.mapType = MKMapType(rawValue: 0)!
         showHiddenButtons(show: false)
         showUserLocation()
+        addPins()
         createTextFieldBorder(searchLocationTxt)
     }
     
@@ -102,6 +103,35 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         activityIndicator.stopAnimating()
     }
     
+    
+    private func addPins() {
+        let mkAnnotation = MKPointAnnotation()
+        let geocoder = CLGeocoder()
+        let address:String = "519 N Ridgewood Dr Slidell, LA 70460"
+        geocoder.geocodeAddressString(address) { (placemarks, error) in
+            if error == nil {
+                if let placeMark = placemarks?.first {
+                    let coordinates:CLLocationCoordinate2D = placeMark.location!.coordinate
+                    mkAnnotation.coordinate = coordinates
+                    self.mapView.addAnnotation(mkAnnotation)
+                    mkAnnotation.title = placeMark.name
+                }
+            }
+        }
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        mapView.deselectAnnotation(view.annotation, animated: true)
+        if view.annotation is MKUserLocation {
+            guard (view.annotation == nil) else{
+                print("user location is pressed")
+                return
+            }
+        }
+        performSegue(withIdentifier: "segueToDocumentVC", sender: self)
+    }
+    
+    
     private func showAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
@@ -125,7 +155,6 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     
     
     @IBAction func openDocumentButton(_ sender: Any) {
-        performSegue(withIdentifier: "segueToDocumentVC", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -134,26 +163,6 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
             documentVC.urlAddress = URL(string: "https://att.box.com/s/9hn9b1wno6korq3bc6i474s3ka6jnw7r")
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    //var placeMark: CLPlacemark!
-    //let mkAnnotation = MKPointAnnotation()
-    //                    placeMark = placemark[0] as CLPlacemark
-    //                    let lat:CLLocationDegrees = CLLocationDegrees((placeMark.location?.coordinate.latitude)!)
-    //                    let long:CLLocationDegrees = CLLocationDegrees((placeMark.location?.coordinate.longitude)!)
-    //                    let coordinates = CLLocationCoordinate2DMake(lat, long)
-    //                    mkAnnotation.coordinate = coordinates
-    //                    let region = MKCoordinateRegionMake(CLLocationCoordinate2DMake(lat, long), span)
-    //                    self.mapView.setRegion(region, animated: true)
-    //                    self.mapView.addAnnotation(mkAnnotation)
-    //                    mkAnnotation.title = placeMark.name
-    //                    mkAnnotation.subtitle = placeMark.locality
-    
     
     
 }
