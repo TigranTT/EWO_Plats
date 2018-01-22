@@ -9,8 +9,9 @@
 import UIKit
 import MapKit
 import CoreLocation
+import MessageUI
 
-class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate {
+class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var showUserLocationButton: UIButton!
@@ -154,7 +155,32 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     }
     
     
+    @IBAction func mailViewButton(_ sender: Any) {
+        let mailView = configureMailController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailView, animated: true, completion: nil)
+        }else{
+            showAlert("Error", message: "eMail is not setup")
+        }
+    }
+    
+    func configureMailController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        mailComposerVC.setToRecipients(["tt730d@att.com"])
+        mailComposerVC.setSubject("EWO Plats")
+        mailComposerVC.setMessageBody("Feedback", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    
     @IBAction func openDocumentButton(_ sender: Any) {
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

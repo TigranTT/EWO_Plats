@@ -109,6 +109,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="VxY-Ba-c5z"/>
@@ -122,13 +123,30 @@
                                 <rect key="frame" x="366" y="494" width="37" height="37"/>
                                 <color key="color" red="0.25331138959999999" green="0.25331138959999999" blue="0.25331138959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3a-en-H37">
+                                <rect key="frame" x="633" y="974" width="115" height="30"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="115" id="mhP-k4-V9k"/>
+                                    <constraint firstAttribute="height" constant="30" id="z2s-ph-mpr"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title=" ✉️ Feedback">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="mailViewButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qms-OS-spP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.019607843140000001" green="0.40784313729999999" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="43H-rt-y6V"/>
                             <constraint firstItem="65y-x9-8kd" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="3" id="5hh-4V-AUC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J3a-en-H37" secondAttribute="trailing" constant="20" id="5od-gD-jRd"/>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6rS-O2-roh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="J3a-en-H37" secondAttribute="bottom" constant="20" id="DuN-pd-SSS"/>
                             <constraint firstItem="dhm-yh-bTs" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="Hcf-4y-qt5"/>
                             <constraint firstItem="I5H-9J-QrV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Hr8-gY-NXS"/>
                             <constraint firstItem="I5H-9J-QrV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XpJ-cg-OrS"/>
@@ -166,7 +184,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="481" y="279"/>
+            <point key="canvasLocation" x="480.46875" y="278.90625"/>
         </scene>
         <!--DocumentVC-->
         <scene sceneID="mfU-Sz-W42">
