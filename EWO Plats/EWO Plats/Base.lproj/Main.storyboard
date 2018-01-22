@@ -25,9 +25,10 @@
                             <stackView contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="u6F-GS-MaD">
                                 <rect key="frame" x="728" y="119" width="35" height="102"/>
                                 <subviews>
-                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir5-hD-fZa" customClass="ButtonsMapView" customModule="EWO_Plats" customModuleProvider="target">
+                                    <button contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ir5-hD-fZa" customClass="ButtonsMapView" customModule="EWO_Plats" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="35" height="49.5"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="ℹ️"/>
                                         <connections>
                                             <action selector="showInfoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Z9R-Sp-LUk"/>
                                         </connections>
@@ -36,7 +37,7 @@
                                         <rect key="frame" x="0.0" y="52.5" width="35" height="49.5"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <state key="normal" title="V"/>
+                                        <state key="normal" title="📍"/>
                                         <connections>
                                             <action selector="showUserLocationButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EvI-3g-H3E"/>
                                         </connections>
@@ -109,7 +110,7 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="VxY-Ba-c5z"/>
@@ -123,9 +124,9 @@
                                 <rect key="frame" x="366" y="494" width="37" height="37"/>
                                 <color key="color" red="0.25331138959999999" green="0.25331138959999999" blue="0.25331138959999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3a-en-H37">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J3a-en-H37" customClass="ButtonsMapView" customModule="EWO_Plats" customModuleProvider="target">
                                 <rect key="frame" x="633" y="974" width="115" height="30"/>
-                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.4756349325" green="0.47564673419999998" blue="0.47564041610000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="115" id="mhP-k4-V9k"/>
                                     <constraint firstAttribute="height" constant="30" id="z2s-ph-mpr"/>
