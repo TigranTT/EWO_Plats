@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		C40EBBEF200B4F16009703F4 /* DocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40EBBEE200B4F16009703F4 /* DocumentVC.swift */; };
 		C40EBBF12010892B009703F4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40EBBF02010892B009703F4 /* Reachability.swift */; };
+		C4485D4C2015890500C75B68 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4485D4B2015890500C75B68 /* Pin.swift */; };
+		C4485D4E2015981C00C75B68 /* PinInfoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4485D4D2015981C00C75B68 /* PinInfoArray.swift */; };
+		C4485D50201E979300C75B68 /* MainVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4485D4F201E979300C75B68 /* MainVCExtension.swift */; };
 		C484061B2004A4DB007275BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484061A2004A4DB007275BF /* AppDelegate.swift */; };
 		C484061D2004A4DB007275BF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484061C2004A4DB007275BF /* MainVC.swift */; };
 		C48406202004A4DB007275BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C484061E2004A4DB007275BF /* Main.storyboard */; };
@@ -20,6 +23,9 @@
 /* Begin PBXFileReference section */
 		C40EBBEE200B4F16009703F4 /* DocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentVC.swift; sourceTree = "<group>"; };
 		C40EBBF02010892B009703F4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		C4485D4B2015890500C75B68 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
+		C4485D4D2015981C00C75B68 /* PinInfoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinInfoArray.swift; sourceTree = "<group>"; };
+		C4485D4F201E979300C75B68 /* MainVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCExtension.swift; sourceTree = "<group>"; };
 		C4570E7B20088A650019277A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C48406172004A4DB007275BF /* EWO Plats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EWO Plats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484061A2004A4DB007275BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -94,6 +100,8 @@
 			isa = PBXGroup;
 			children = (
 				C40EBBF02010892B009703F4 /* Reachability.swift */,
+				C4485D4B2015890500C75B68 /* Pin.swift */,
+				C4485D4D2015981C00C75B68 /* PinInfoArray.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -110,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				C484061C2004A4DB007275BF /* MainVC.swift */,
+				C4485D4F201E979300C75B68 /* MainVCExtension.swift */,
 				C40EBBEE200B4F16009703F4 /* DocumentVC.swift */,
 			);
 			path = Controller;
@@ -190,6 +199,9 @@
 				C4884E302005892000B1803B /* ButtonsMapView.swift in Sources */,
 				C484061D2004A4DB007275BF /* MainVC.swift in Sources */,
 				C484061B2004A4DB007275BF /* AppDelegate.swift in Sources */,
+				C4485D50201E979300C75B68 /* MainVCExtension.swift in Sources */,
+				C4485D4E2015981C00C75B68 /* PinInfoArray.swift in Sources */,
+				C4485D4C2015890500C75B68 /* Pin.swift in Sources */,
 				C40EBBF12010892B009703F4 /* Reachability.swift in Sources */,
 				C40EBBEF200B4F16009703F4 /* DocumentVC.swift in Sources */,
 			);

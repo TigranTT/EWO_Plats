@@ -23,6 +23,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let clLocationManager = CLLocationManager()
+    let pins = pinInfo //Array of location addresses and corresponding URLs
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         mapView.delegate = self
         clLocationManager.delegate = self
         mapView.showsUserLocation = true
+        mapView.tintColor = #colorLiteral(red: 0, green: 0.415807426, blue: 0.7040852904, alpha: 1)
         mapView.mapType = MKMapType(rawValue: 0)!
         showHiddenButtons(show: false)
         showUserLocation()
@@ -83,55 +85,18 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     
     
     private func searchLocation(address: String) {
-        activityIndicator.startAnimating()
-        let geocoder = CLGeocoder()
         let address = address
         let span = MKCoordinateSpanMake(0.05, 0.05)
-        geocoder.geocodeAddressString(address) { (placemarks, error) in
+        getCoordinate(addressString: address) { (location, error) in
             if error == nil {
-                if let placemark = placemarks?.first {
-                    let coordinates:CLLocationCoordinate2D = placemark.location!.coordinate
-                    let lat = CLLocationDegrees(coordinates.latitude)
-                    let long = CLLocationDegrees(coordinates.longitude)
-                    let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: lat, longitude: long), span)
-                    self.mapView.setRegion(region, animated: true)
-                }
+                let region = MKCoordinateRegionMake(CLLocationCoordinate2D(latitude: location.latitude, longitude: location.longitude), span)
+                self.mapView.setRegion(region, animated: true)
             }else{
                 self.showAlert("oops!", message: "Location \"\(address)\" not found")
                 self.showHiddenButtons(show: true)
             }
         }
-        activityIndicator.stopAnimating()
     }
-    
-    
-    private func addPins() {
-        let mkAnnotation = MKPointAnnotation()
-        let geocoder = CLGeocoder()
-        let address:String = "519 N Ridgewood Dr Slidell, LA 70460"
-        geocoder.geocodeAddressString(address) { (placemarks, error) in
-            if error == nil {
-                if let placeMark = placemarks?.first {
-                    let coordinates:CLLocationCoordinate2D = placeMark.location!.coordinate
-                    mkAnnotation.coordinate = coordinates
-                    self.mapView.addAnnotation(mkAnnotation)
-                    mkAnnotation.title = placeMark.name
-                }
-            }
-        }
-    }
-    
-    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
-        mapView.deselectAnnotation(view.annotation, animated: true)
-        if view.annotation is MKUserLocation {
-            guard (view.annotation == nil) else{
-                print("user location is pressed")
-                return
-            }
-        }
-        performSegue(withIdentifier: "segueToDocumentVC", sender: self)
-    }
-    
     
     private func showAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -182,14 +147,6 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     @IBAction func openDocumentButton(_ sender: Any) {
         
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segueToDocumentVC" {
-            let documentVC = segue.destination as! DocumentVC
-            documentVC.urlAddress = URL(string: "https://att.box.com/s/9hn9b1wno6korq3bc6i474s3ka6jnw7r")
-        }
-    }
-    
     
 }
 

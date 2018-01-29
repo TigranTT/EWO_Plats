@@ -190,7 +190,7 @@
         <!--DocumentVC-->
         <scene sceneID="mfU-Sz-W42">
             <objects>
-                <viewController id="MEu-kL-nUH" customClass="DocumentVC" customModule="EWO_Plats" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DocumentVC" id="MEu-kL-nUH" customClass="DocumentVC" customModule="EWO_Plats" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M7b-aM-WEl">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
