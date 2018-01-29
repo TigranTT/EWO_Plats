@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+//extension for the MainVC to avoid clutter and concentrate MAP related funtions
 extension MainVC {
     
     //funtion to convert address to CLLocationCoordinate2D latitude and longitude

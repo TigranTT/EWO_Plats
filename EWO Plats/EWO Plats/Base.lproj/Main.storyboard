@@ -165,11 +165,6 @@
                     </view>
                     <navigationItem key="navigationItem" title="EWO Plats" id="bzy-99-6xW">
                         <barButtonItem key="backBarButtonItem" title="Back" id="yaM-s8-wD7"/>
-                        <barButtonItem key="leftBarButtonItem" systemItem="play" id="wWf-om-5Du">
-                            <connections>
-                                <action selector="openDocumentButton:" destination="BYZ-38-t0r" id="nH4-3t-8Gv"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="I5H-9J-QrV" id="jQh-yY-cAe"/>
