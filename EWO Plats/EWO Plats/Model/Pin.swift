@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 
+//class to set PIN's property
 class Pin: NSObject {
     var title: String
     var pinURL: String

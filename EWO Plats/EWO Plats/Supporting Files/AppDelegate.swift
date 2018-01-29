@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        //loading website in full desktop view to avoid complications on mobile view version
         UserDefaults.standard.register(defaults: ["UserAgent": "Custom-Agent"])
         return true
     }

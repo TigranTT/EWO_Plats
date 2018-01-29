@@ -11,6 +11,7 @@ import MapKit
 
 extension MainVC {
     
+    //funtion to convert address to CLLocationCoordinate2D latitude and longitude
     func getCoordinate( addressString : String, completionHandler: @escaping(CLLocationCoordinate2D, NSError?) -> Void ){
         let geocoder = CLGeocoder()
         geocoder.geocodeAddressString(addressString) { (placemarks, error) in
@@ -25,6 +26,7 @@ extension MainVC {
         }
     }
     
+    //function to add multiple PINs on the MAP. Creating array of annotations using CLGeocoder method.
     func addPins() {
         var annotations = [MKPointAnnotation]()
         for pin in pins {
@@ -44,7 +46,7 @@ extension MainVC {
         }
     }
     
-    
+    //mapView didSelect function grab selected PINs and Segue to WebView
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         mapView.deselectAnnotation(view.annotation, animated: true)
         if view.annotation is MKUserLocation {
@@ -56,7 +58,7 @@ extension MainVC {
         performSegue(withIdentifier: "segueToDocumentVC", sender: view)
     }
     
-    
+    //Segue override to transfer selected PIN's URL property
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "segueToDocumentVC" {
             let annotation = (sender as! MKAnnotationView).annotation

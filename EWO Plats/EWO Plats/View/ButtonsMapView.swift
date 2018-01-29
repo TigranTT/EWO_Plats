@@ -8,6 +8,7 @@
 
 import UIKit
 
+//class to use for Buttons on the MainVC
 class ButtonsMapView: UIButton {
 
     override func awakeFromNib() {

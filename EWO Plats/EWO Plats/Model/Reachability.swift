@@ -9,6 +9,8 @@
 import Foundation
 import SystemConfiguration
 
+
+//creating class to notify user of Internet connectivity issues. See implementation of this method in DocumentVC 
 public class Reachability {
     
     class func isConnectedToNetwork() -> Bool {

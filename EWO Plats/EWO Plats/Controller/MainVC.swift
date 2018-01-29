@@ -23,7 +23,8 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     let clLocationManager = CLLocationManager()
-    let pins = pinInfo //Array of location addresses and corresponding URLs
+    //Array of location addresses and corresponding URLs
+    let pins = pinInfo
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +84,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         mapView.userTrackingMode = MKUserTrackingMode(rawValue: 1)!
     }
     
-    
+    //search location using CLGeocoder to convert user inputed address. CLGeocoder is implemented in in Extension.
     private func searchLocation(address: String) {
         let address = address
         let span = MKCoordinateSpanMake(0.05, 0.05)
@@ -97,13 +98,6 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
             }
         }
     }
-    
-    private func showAlert(_ title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
-    
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if searchLocationTxt.resignFirstResponder() {
@@ -119,7 +113,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         textField.layer.cornerRadius = 5.0
     }
     
-    
+    //implementing function to send email feedback to originator
     @IBAction func mailViewButton(_ sender: Any) {
         let mailView = configureMailController()
         if MFMailComposeViewController.canSendMail() {
@@ -143,10 +137,13 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         controller.dismiss(animated: true, completion: nil)
     }
     
-    
-    @IBAction func openDocumentButton(_ sender: Any) {
-        
+    //private function to show custom Alert
+    private func showAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
+
     
 }
 

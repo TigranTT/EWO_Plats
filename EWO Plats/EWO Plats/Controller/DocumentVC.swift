@@ -27,6 +27,7 @@ class DocumentVC: UIViewController, UIWebViewDelegate, WKUIDelegate, WKNavigatio
         }
     }
     
+    //implementing Activity Indicator to start animating while browser is loading and stop animating after the wbesite finished loading  
     func webView(_ webView: WKWebView, didCommit navigation: WKNavigation!) {
         activityIndicator.startAnimating()
     }
@@ -34,6 +35,7 @@ class DocumentVC: UIViewController, UIWebViewDelegate, WKUIDelegate, WKNavigatio
         activityIndicator.stopAnimating()
     }
     
+    //private function to show custom Alert
     private func showAlert(_ title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
