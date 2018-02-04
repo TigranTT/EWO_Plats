@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dhm-yh-bTs">
-                                <rect key="frame" x="0.0" y="64" width="1024" height="603"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="dhm-yh-bTs">
+                                <rect key="frame" x="0.0" y="64" width="1024" height="1302"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </mapView>
                             <stackView contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="u6F-GS-MaD">
@@ -203,7 +203,8 @@
                                 <color key="color" red="0.35294117650000001" green="0.35294117650000001" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </activityIndicatorView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.019607843140000001" green="0.40784313729999999" blue="0.68235294120000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="h5Z-Rm-0P4" firstAttribute="top" secondItem="2AW-iq-Rnx" secondAttribute="top" id="Pl3-eq-EhL"/>
                             <constraint firstItem="h5Z-Rm-0P4" firstAttribute="trailing" secondItem="2AW-iq-Rnx" secondAttribute="trailing" id="S1h-tU-01R"/>
