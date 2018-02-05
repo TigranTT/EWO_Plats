@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C40EBBEF200B4F16009703F4 /* DocumentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40EBBEE200B4F16009703F4 /* DocumentVC.swift */; };
 		C40EBBF12010892B009703F4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40EBBF02010892B009703F4 /* Reachability.swift */; };
+		C437F10F202704E6001A67EC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C437F10E202704E6001A67EC /* CoreData.framework */; };
+		C437F1122027057B001A67EC /* EWO_Plats.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C437F1102027057B001A67EC /* EWO_Plats.xcdatamodeld */; };
 		C4485D4C2015890500C75B68 /* Pin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4485D4B2015890500C75B68 /* Pin.swift */; };
 		C4485D4E2015981C00C75B68 /* PinInfoArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4485D4D2015981C00C75B68 /* PinInfoArray.swift */; };
 		C4485D50201E979300C75B68 /* MainVCExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4485D4F201E979300C75B68 /* MainVCExtension.swift */; };
@@ -24,6 +26,8 @@
 /* Begin PBXFileReference section */
 		C40EBBEE200B4F16009703F4 /* DocumentVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentVC.swift; sourceTree = "<group>"; };
 		C40EBBF02010892B009703F4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		C437F10E202704E6001A67EC /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C437F1112027057B001A67EC /* EWO_Plats.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EWO_Plats.xcdatamodel; sourceTree = "<group>"; };
 		C4485D4B2015890500C75B68 /* Pin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pin.swift; sourceTree = "<group>"; };
 		C4485D4D2015981C00C75B68 /* PinInfoArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinInfoArray.swift; sourceTree = "<group>"; };
 		C4485D4F201E979300C75B68 /* MainVCExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVCExtension.swift; sourceTree = "<group>"; };
@@ -43,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C437F10F202704E6001A67EC /* CoreData.framework in Frameworks */,
 				C4485D51201ED8E100C75B68 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -63,6 +68,7 @@
 		C4570E7A20088A640019277A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C437F10E202704E6001A67EC /* CoreData.framework */,
 				C4570E7B20088A650019277A /* MapKit.framework */,
 			);
 			name = Frameworks;
@@ -94,6 +100,7 @@
 				C484061E2004A4DB007275BF /* Main.storyboard */,
 				C4485D4820155ECF00C75B68 /* Supporting Files */,
 				C48406262004A4DB007275BF /* Info.plist */,
+				C437F1102027057B001A67EC /* EWO_Plats.xcdatamodeld */,
 			);
 			path = "EWO Plats";
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 			files = (
 				C4884E302005892000B1803B /* ButtonsMapView.swift in Sources */,
 				C484061D2004A4DB007275BF /* MainVC.swift in Sources */,
+				C437F1122027057B001A67EC /* EWO_Plats.xcdatamodeld in Sources */,
 				C484061B2004A4DB007275BF /* AppDelegate.swift in Sources */,
 				C4485D50201E979300C75B68 /* MainVCExtension.swift in Sources */,
 				C4485D4E2015981C00C75B68 /* PinInfoArray.swift in Sources */,
@@ -395,6 +403,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C437F1102027057B001A67EC /* EWO_Plats.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C437F1112027057B001A67EC /* EWO_Plats.xcdatamodel */,
+			);
+			currentVersion = C437F1112027057B001A67EC /* EWO_Plats.xcdatamodel */;
+			path = EWO_Plats.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C484060F2004A4DB007275BF /* Project object */;
 }
