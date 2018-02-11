@@ -15,25 +15,52 @@ class NoteVC: UIViewController {
     
     
     
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
-        tableView.estimatedRowHeight = 225
         tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 235
+        
         
         navigationItem.title = "🗒 RW Info"
-        navigationItem.rightBarButtonItem = editButtonItem
-        editButtonItem.title = "➕"
+        let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(hello(sender:)))
+        navigationItem.rightBarButtonItem = rightButton
+        
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        tableView .reloadData()
+    }
+    
+    
+    
+    @objc func hello(sender: UIBarButtonItem) {
+        let VC = storyboard?.instantiateViewController(withIdentifier: "AddNote") as! AddNote
+        present(VC, animated: true, completion: nil)
+    }
+    
+    @objc func hello2(sender: UIBarButtonItem) {
+        print("add RW")
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    private func showAlert(_ title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 
