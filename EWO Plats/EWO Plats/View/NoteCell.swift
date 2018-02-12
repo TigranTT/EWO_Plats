@@ -17,16 +17,10 @@ class NoteCell: UITableViewCell {
     @IBOutlet weak var requestNarratives: UITextView!
     
     func configureCell(note: Note) {
-        let dateFormatter: DateFormatter = {
-            let df = DateFormatter()
-            df.dateStyle = .short
-            return df
-        }()
-        
-        self.currentDate.text = note.date//dateFormatter.string(from: Date())
+        self.currentDate.text = note.creationDate//dateFormatter.string(from: Date())
         self.ban.text = note.ban//String(describing: ban)
-        self.customerAddress.text = note.address//customerAddress
-        self.locationAddress.text = note.location//locationAddress
+        self.customerAddress.text = note.customerAddress//customerAddress
+        self.locationAddress.text = note.locationAddress//locationAddress
         self.requestNarratives.text = note.request//requestNarratives
     }
 }

@@ -11,6 +11,8 @@ import MapKit
 import CoreLocation
 import MessageUI
 
+let appDelegate = UIApplication.shared.delegate as? AppDelegate
+
 class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!

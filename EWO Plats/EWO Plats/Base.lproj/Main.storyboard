@@ -273,6 +273,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" indicatorStyle="white" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="QEe-yP-PVB">
                                 <rect key="frame" x="5" y="64" width="1014" height="1302"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noteCell" rowHeight="235" id="fqO-4f-fuJ" customClass="NoteCell" customModule="EWO_Plats" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="1014" height="235"/>
@@ -345,12 +346,12 @@
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456789" borderStyle="roundedRect" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ctb-0F-0zg">
+                                                                        <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="123456789" borderStyle="roundedRect" adjustsFontForContentSizeCategory="YES" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="ctb-0F-0zg">
                                                                             <rect key="frame" x="60" y="0.0" width="414.5" height="30"/>
                                                                             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.49970569349315069" colorSpace="calibratedRGB"/>
                                                                             <nil key="textColor"/>
                                                                             <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
+                                                                            <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                                         </textField>
                                                                     </subviews>
                                                                 </stackView>
@@ -385,12 +386,12 @@
                                                                         </mask>
                                                                     </variation>
                                                                 </label>
-                                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="143 Aberdeen dr. Slidell LA, 70461" borderStyle="roundedRect" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hVK-M6-jCr">
+                                                                <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="143 Aberdeen dr. Slidell LA, 70461" borderStyle="roundedRect" adjustsFontForContentSizeCategory="YES" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="hVK-M6-jCr">
                                                                     <rect key="frame" x="105" y="0.0" width="849" height="30"/>
                                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.49970569349315069" colorSpace="calibratedRGB"/>
                                                                     <nil key="textColor"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
-                                                                    <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" textContentType="street-address"/>
+                                                                    <textInputTraits key="textInputTraits"/>
                                                                 </textField>
                                                             </subviews>
                                                         </stackView>
@@ -423,7 +424,7 @@
                                                                         </mask>
                                                                     </variation>
                                                                 </label>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g. Between terminal 120 and hand-hole 128 Samle st. " adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bZ9-Sa-dco">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="e.g. Between terminal 120 and hand-hole 128 Samle st. " adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZ9-Sa-dco">
                                                                     <rect key="frame" x="105" y="0.0" width="849" height="60"/>
                                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.49970569349315069" colorSpace="calibratedRGB"/>
                                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
@@ -460,7 +461,7 @@
                                                                         </mask>
                                                                     </variation>
                                                                 </label>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PkK-jp-Mos">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PkK-jp-Mos">
                                                                     <rect key="frame" x="105" y="0.0" width="849" height="60"/>
                                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="0.49970569349315069" colorSpace="calibratedRGB"/>
                                                                     <string key="text">e.g. repair/replace innerduct and install mule tape e.g. repair/replace innerduct and install mule tapee.g. repair/replace innerduct and install mule tapee.g. repair/replace innerduct and install mule tape</string>
@@ -597,7 +598,7 @@
                                                                     </mask>
                                                                 </variation>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/12/2018" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exJ-aK-MJk">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="02/10/2018" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exJ-aK-MJk">
                                                                 <rect key="frame" x="484.5" y="0.0" width="479.5" height="40"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                                                 <nil key="textColor"/>
@@ -639,12 +640,12 @@
                                                                     </mask>
                                                                 </variation>
                                                             </label>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g.  123456789" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ROo-Vh-yte">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="e.g.  123456789" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ROo-Vh-yte">
                                                                 <rect key="frame" x="125" y="0.0" width="839" height="40"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20277718321917809" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="18"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                                             </textView>
                                                         </subviews>
                                                     </stackView>
@@ -677,12 +678,12 @@
                                                                     </mask>
                                                                 </variation>
                                                             </label>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g.  130 Street dr. City LA" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-aG-xRx">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="e.g.  130 Street dr. City LA" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r7L-aG-xRx">
                                                                 <rect key="frame" x="125" y="0.0" width="839" height="40"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20277718321917809" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="18"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="address-line1"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES" textContentType="street-address"/>
                                                             </textView>
                                                         </subviews>
                                                     </stackView>
@@ -715,12 +716,12 @@
                                                                     </mask>
                                                                 </variation>
                                                             </label>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g.  Between terminal 120 and hand-hole 128 Street st. " adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4K3-k6-cSr">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="e.g.  Between terminal 120 and hand-hole 128 Street st. " adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4K3-k6-cSr">
                                                                 <rect key="frame" x="125" y="0.0" width="839" height="70"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20277718321917809" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="18"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" textContentType="location"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES" textContentType="location"/>
                                                             </textView>
                                                         </subviews>
                                                     </stackView>
@@ -753,12 +754,12 @@
                                                                     </mask>
                                                                 </variation>
                                                             </label>
-                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="e.g.  repair/replace innerduct and install mule tape " adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32H-FH-6ko">
+                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="onDrag" text="e.g.  repair/replace innerduct and install mule tape " adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32H-FH-6ko">
                                                                 <rect key="frame" x="125" y="0.0" width="839" height="70"/>
                                                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.20277718321917809" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                                 <fontDescription key="fontDescription" name="AvenirNext-Italic" family="Avenir Next" pointSize="18"/>
-                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" enablesReturnKeyAutomatically="YES"/>
                                                             </textView>
                                                         </subviews>
                                                     </stackView>
@@ -862,7 +863,12 @@
                         <viewLayoutGuide key="safeArea" id="nmx-ZD-wDP"/>
                     </view>
                     <connections>
+                        <outlet property="addressTxt" destination="r7L-aG-xRx" id="UIT-r0-OyK"/>
+                        <outlet property="banTxt" destination="ROo-Vh-yte" id="wQb-OF-Qj7"/>
+                        <outlet property="dateLabel" destination="exJ-aK-MJk" id="S3o-hi-oge"/>
                         <outlet property="doneButton" destination="Nvb-FX-FiQ" id="Rsp-bL-ZZ1"/>
+                        <outlet property="locationTxt" destination="4K3-k6-cSr" id="bUu-P6-Ra8"/>
+                        <outlet property="requestTxt" destination="32H-FH-6ko" id="UZb-NP-XeA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQA-gk-5C3" userLabel="First Responder" sceneMemberID="firstResponder"/>

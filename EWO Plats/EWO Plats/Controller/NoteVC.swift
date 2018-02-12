@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class NoteVC: UIViewController {
 
@@ -14,13 +15,11 @@ class NoteVC: UIViewController {
     
     var notes: [Note] = []
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.delegate = self
         tableView.dataSource = self
-        
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 235
         
@@ -29,6 +28,17 @@ class NoteVC: UIViewController {
         navigationItem.rightBarButtonItem = rightButton
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.fecth { (complete) in
+            if complete {
+                tableView.reloadData()
+            }
+        }
+    }
+    
     
     @objc func toAddNote(sender: UIBarButtonItem) {
         let vc = storyboard?.instantiateViewController(withIdentifier: "AddNote") as! AddNote
@@ -42,11 +52,11 @@ class NoteVC: UIViewController {
 extension NoteVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return notes.count
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -62,18 +72,36 @@ extension NoteVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as? NoteCell else {return UITableViewCell()}
-        //let note = notes[indexPath.row]
+        let note = notes[indexPath.row]
         
-        //cell.configureCell(note: note)
+        cell.configureCell(note: note)
         
-        cell.layer.cornerRadius = CGFloat(20)
+        cell.layer.cornerRadius = CGFloat(30)
         cell.layer.borderColor = #colorLiteral(red: 0, green: 0.463690877, blue: 0.6937961578, alpha: 1)
-        cell.layer.borderWidth = 5
+        cell.layer.borderWidth = 3
         cell.clipsToBounds = true
         
         return cell
     }
     
+}
+
+
+extension NoteVC {
+    func fecth(completion: (_ finished: Bool) -> ()) {
+        guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
+        
+        let fetchRequest = NSFetchRequest<Note>(entityName: "Note")
+        
+        do {
+            notes = try managedContext.fetch(fetchRequest)
+            print("Data Fetched")
+            completion(true)
+        } catch {
+            debugPrint("couldnt Fetch \(error.localizedDescription)")
+            completion(false)
+        }
+    }
 }
 
 
