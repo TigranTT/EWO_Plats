@@ -17,13 +17,14 @@
 		C4485D51201ED8E100C75B68 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4570E7B20088A650019277A /* MapKit.framework */; };
 		C459941E202938C8006B4D5C /* NoteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C459941D202938C8006B4D5C /* NoteCell.swift */; };
 		C4599422202ADC2B006B4D5C /* NoteVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4599421202ADC2B006B4D5C /* NoteVC.swift */; };
-		C4599424203012CE006B4D5C /* AddNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4599423203012CE006B4D5C /* AddNote.swift */; };
 		C484061B2004A4DB007275BF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484061A2004A4DB007275BF /* AppDelegate.swift */; };
 		C484061D2004A4DB007275BF /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C484061C2004A4DB007275BF /* MainVC.swift */; };
 		C48406202004A4DB007275BF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C484061E2004A4DB007275BF /* Main.storyboard */; };
 		C48406222004A4DB007275BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48406212004A4DB007275BF /* Assets.xcassets */; };
 		C48406252004A4DB007275BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48406232004A4DB007275BF /* LaunchScreen.storyboard */; };
 		C4884E302005892000B1803B /* ButtonsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4884E2F2005892000B1803B /* ButtonsMapView.swift */; };
+		C49A12952030475C007217F4 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A12942030475C007217F4 /* KeyboardExtension.swift */; };
+		C49A129720312A18007217F4 /* AddNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A129620312A18007217F4 /* AddNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +38,6 @@
 		C4570E7B20088A650019277A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C459941D202938C8006B4D5C /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		C4599421202ADC2B006B4D5C /* NoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVC.swift; sourceTree = "<group>"; };
-		C4599423203012CE006B4D5C /* AddNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNote.swift; sourceTree = "<group>"; };
 		C48406172004A4DB007275BF /* EWO Plats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EWO Plats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484061A2004A4DB007275BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C484061C2004A4DB007275BF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
@@ -46,6 +46,8 @@
 		C48406242004A4DB007275BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C48406262004A4DB007275BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4884E2F2005892000B1803B /* ButtonsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsMapView.swift; sourceTree = "<group>"; };
+		C49A12942030475C007217F4 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
+		C49A129620312A18007217F4 /* AddNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,8 @@
 			isa = PBXGroup;
 			children = (
 				C4884E2F2005892000B1803B /* ButtonsMapView.swift */,
+				C49A12942030475C007217F4 /* KeyboardExtension.swift */,
+				C459941D202938C8006B4D5C /* NoteCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -135,9 +139,8 @@
 				C484061C2004A4DB007275BF /* MainVC.swift */,
 				C4485D4F201E979300C75B68 /* MainVCExtension.swift */,
 				C40EBBEE200B4F16009703F4 /* DocumentVC.swift */,
-				C459941D202938C8006B4D5C /* NoteCell.swift */,
 				C4599421202ADC2B006B4D5C /* NoteVC.swift */,
-				C4599423203012CE006B4D5C /* AddNote.swift */,
+				C49A129620312A18007217F4 /* AddNote.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -223,12 +226,13 @@
 				C484061D2004A4DB007275BF /* MainVC.swift in Sources */,
 				C437F1122027057B001A67EC /* EWO_Plats.xcdatamodeld in Sources */,
 				C484061B2004A4DB007275BF /* AppDelegate.swift in Sources */,
+				C49A12952030475C007217F4 /* KeyboardExtension.swift in Sources */,
 				C4485D50201E979300C75B68 /* MainVCExtension.swift in Sources */,
 				C4485D4E2015981C00C75B68 /* PinInfoArray.swift in Sources */,
 				C4485D4C2015890500C75B68 /* Pin.swift in Sources */,
-				C4599424203012CE006B4D5C /* AddNote.swift in Sources */,
 				C459941E202938C8006B4D5C /* NoteCell.swift in Sources */,
 				C4599422202ADC2B006B4D5C /* NoteVC.swift in Sources */,
+				C49A129720312A18007217F4 /* AddNote.swift in Sources */,
 				C40EBBF12010892B009703F4 /* Reachability.swift in Sources */,
 				C40EBBEF200B4F16009703F4 /* DocumentVC.swift in Sources */,
 			);
