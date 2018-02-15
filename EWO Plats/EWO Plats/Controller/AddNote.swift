@@ -61,16 +61,9 @@ class AddNote: UIViewController, UITextViewDelegate {
             textView.font = UIFont(name: "Avenir-Medium", size: 18)
             textView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         break
-        default: textView.text = ""
+        default: ()
         }
     }
-    
-    
-//    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
-//        guard let stringRange = Range(range, in: banTxt.text) else { return false }
-//        let changedText = banTxt.text.replacingCharacters(in: stringRange, with: text)
-//        return changedText.count <= 9
-//    }
     
     
     @IBAction func doneButtonPressed(_ sender: Any) {
