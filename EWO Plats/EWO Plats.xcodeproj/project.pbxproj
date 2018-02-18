@@ -23,7 +23,7 @@
 		C48406222004A4DB007275BF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C48406212004A4DB007275BF /* Assets.xcassets */; };
 		C48406252004A4DB007275BF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C48406232004A4DB007275BF /* LaunchScreen.storyboard */; };
 		C4884E302005892000B1803B /* ButtonsMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4884E2F2005892000B1803B /* ButtonsMapView.swift */; };
-		C49A12952030475C007217F4 /* KeyboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A12942030475C007217F4 /* KeyboardExtension.swift */; };
+		C49A12952030475C007217F4 /* KeyboardExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A12942030475C007217F4 /* KeyboardExtensions.swift */; };
 		C49A129720312A18007217F4 /* AddNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49A129620312A18007217F4 /* AddNote.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,7 +46,7 @@
 		C48406242004A4DB007275BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C48406262004A4DB007275BF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C4884E2F2005892000B1803B /* ButtonsMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsMapView.swift; sourceTree = "<group>"; };
-		C49A12942030475C007217F4 /* KeyboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtension.swift; sourceTree = "<group>"; };
+		C49A12942030475C007217F4 /* KeyboardExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardExtensions.swift; sourceTree = "<group>"; };
 		C49A129620312A18007217F4 /* AddNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -127,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				C4884E2F2005892000B1803B /* ButtonsMapView.swift */,
-				C49A12942030475C007217F4 /* KeyboardExtension.swift */,
+				C49A12942030475C007217F4 /* KeyboardExtensions.swift */,
 				C459941D202938C8006B4D5C /* NoteCell.swift */,
 			);
 			path = View;
@@ -226,7 +226,7 @@
 				C484061D2004A4DB007275BF /* MainVC.swift in Sources */,
 				C437F1122027057B001A67EC /* EWO_Plats.xcdatamodeld in Sources */,
 				C484061B2004A4DB007275BF /* AppDelegate.swift in Sources */,
-				C49A12952030475C007217F4 /* KeyboardExtension.swift in Sources */,
+				C49A12952030475C007217F4 /* KeyboardExtensions.swift in Sources */,
 				C4485D50201E979300C75B68 /* MainVCExtension.swift in Sources */,
 				C4485D4E2015981C00C75B68 /* PinInfoArray.swift in Sources */,
 				C4485D4C2015890500C75B68 /* Pin.swift in Sources */,

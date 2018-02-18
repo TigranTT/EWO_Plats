@@ -11,7 +11,7 @@ import MapKit
 import CoreLocation
 import MessageUI
 
-let appDelegate = UIApplication.shared.delegate as? AppDelegate
+let appDelegate = UIApplication.shared.delegate as? AppDelegate //creating property to use in different classes and reference to persistentContainer in AppDelegate.
 
 class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
     
@@ -40,6 +40,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         showUserLocation()
         addPins()
         createTextFieldBorder(searchLocationTxt)
+        self.hideKeyboardOnTap()
     }
     
     func showHiddenButtons(show: Bool) {

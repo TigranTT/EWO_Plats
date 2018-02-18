@@ -13,9 +13,8 @@ class NoteVC: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    var notes: [Note] = []
-    
-    var itemsToLoad = [AnyObject]()
+    var notes: [Note] = []  //property to be used to add data in tp Note array
+    var itemsToLoad = [AnyObject]() //array to add data retrieved from CoreData
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,9 +25,16 @@ class NoteVC: UIViewController {
         tableView.estimatedRowHeight = 235
         
         navigationItem.title = "🗒 RW Info"
+        //created UIBarButton on the right side
         let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(toAddNote(sender:)))
         navigationItem.rightBarButtonItem = rightButton
         
+    }
+    
+    //adding segue to UIBarButton
+    @objc func toAddNote(sender: UIBarButtonItem) {
+        let vc = storyboard?.instantiateViewController(withIdentifier: "AddNote") as! AddNote
+        present(vc, animated: true, completion: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,22 +43,16 @@ class NoteVC: UIViewController {
         fetchDataTableView()
     }
     
-    
+    //method to Reload data on the TableView when the Fetch function is complete.
     func fetchDataTableView() {
         fetch { (complete) in
             tableView.reloadData()
         }
     }
-    
-    @objc func toAddNote(sender: UIBarButtonItem) {
-        let vc = storyboard?.instantiateViewController(withIdentifier: "AddNote") as! AddNote
-        present(vc, animated: true, completion: nil)
-    }
 
 }
 
-
-
+//extension for TableView actions
 extension NoteVC: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -114,7 +114,7 @@ extension NoteVC: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-
+//extension to implement functions to Fetch, Remove and retrieve data from CoreData
 extension NoteVC {
     
     func fetch(completion: (_ finished: Bool) -> ()) {
@@ -171,7 +171,6 @@ extension NoteVC {
         }
         print("dataToReturn \(dataToReturn)")
     }
-    
     
 }
 

@@ -8,6 +8,7 @@
 
 import UIKit
 
+//extension to bind the view to keyboard.
 extension UIView {
     func bindToKeyboard() {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(_:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
@@ -25,4 +26,17 @@ extension UIView {
         }, completion: nil)
     }
     
+}
+
+//extension to hide the keyboard when tapped outside the editable area.
+extension UIViewController {
+    func hideKeyboardOnTap() {
+        self.view.addGestureRecognizer(self.tapRecognizer())
+    }
+    
+    private func tapRecognizer() -> UIGestureRecognizer {
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector (self.view.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        return tap
+    }
 }

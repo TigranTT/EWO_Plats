@@ -17,6 +17,7 @@ class AddNote: UIViewController, UITextViewDelegate {
     @IBOutlet weak var locationTxt: UITextView!
     @IBOutlet weak var requestTxt: UITextView!
     @IBOutlet weak var doneButton: UIButton!
+    @IBOutlet weak var cancelButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -26,8 +27,9 @@ class AddNote: UIViewController, UITextViewDelegate {
         addressTxt.delegate = self
         locationTxt.delegate = self
         requestTxt.delegate = self
+        self.hideKeyboardOnTap()
         
-        
+        //date formatter to place the current date in dateLabel
         let dateFormatter: DateFormatter = {
             let df = DateFormatter()
             df.dateStyle = .short
@@ -38,11 +40,13 @@ class AddNote: UIViewController, UITextViewDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
+        cancelButton.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         //doneButton.bindToKeyboard()
     }
     
-    
+    //implementing Switch to set actions when each text field is being edited
     func textViewDidBeginEditing(_ textView: UITextView) {
+        doneButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         switch textView {
         case banTxt:
             textView.text = ""
@@ -74,7 +78,11 @@ class AddNote: UIViewController, UITextViewDelegate {
         }
     }
     
+    @IBAction func cancelButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     
+    //save funtion is adding data to CoreData
     func save(completion: (_ finished: Bool) -> ()) {
         guard let managedContext = appDelegate?.persistentContainer.viewContext else {return}
         
