@@ -41,12 +41,14 @@ class AddNote: UIViewController, UITextViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super .viewWillAppear(true)
         cancelButton.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
+        doneButton.isEnabled = false
         //doneButton.bindToKeyboard()
     }
     
     //implementing Switch to set actions when each text field is being edited
     func textViewDidBeginEditing(_ textView: UITextView) {
         doneButton.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        doneButton.isEnabled = true
         switch textView {
         case banTxt:
             textView.text = ""

@@ -77,7 +77,6 @@ extension NoteVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell") as? NoteCell else {return UITableViewCell()}
         let note = notes[indexPath.row]
-        
         cell.configureCell(note: note)
         
         cell.layer.cornerRadius = CGFloat(10)
@@ -138,7 +137,7 @@ extension NoteVC {
         
         do {
             try managedContext.save()
-            print("Note Removed")
+            print("Note was Removed")
         } catch {
             debugPrint("Couldnt Remove \(error.localizedDescription)")
         }
