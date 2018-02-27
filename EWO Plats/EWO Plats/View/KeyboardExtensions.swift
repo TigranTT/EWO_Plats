@@ -28,8 +28,9 @@ extension UIView {
     
 }
 
-//extension to hide the keyboard when tapped outside the editable area.
+//extension to hide the keyboard and share the showAlert function throughout the app.
 extension UIViewController {
+    //function to hide the keyboard when tapped outside the editable area
     func hideKeyboardOnTap() {
         self.view.addGestureRecognizer(self.tapRecognizer())
     }
