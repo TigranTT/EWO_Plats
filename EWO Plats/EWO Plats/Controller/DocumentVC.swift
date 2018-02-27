@@ -18,6 +18,7 @@ class DocumentVC: UIViewController, UIWebViewDelegate, WKUIDelegate, WKNavigatio
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        activityIndicator.startAnimating()
         webView.navigationDelegate = self
         let request = URLRequest(url: urlAddress!)
         if Reachability.isConnectedToNetwork() == false {
@@ -35,11 +36,5 @@ class DocumentVC: UIViewController, UIWebViewDelegate, WKUIDelegate, WKNavigatio
         activityIndicator.stopAnimating()
     }
     
-    //private function to show custom Alert
-    private func showAlert(_ title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
 
 }

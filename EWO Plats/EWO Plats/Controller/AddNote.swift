@@ -42,7 +42,6 @@ class AddNote: UIViewController, UITextViewDelegate {
         super .viewWillAppear(true)
         cancelButton.backgroundColor = #colorLiteral(red: 0.9254902005, green: 0.2352941185, blue: 0.1019607857, alpha: 1)
         doneButton.isEnabled = false
-        //doneButton.bindToKeyboard()
     }
     
     //implementing Switch to set actions when each text field is being edited
