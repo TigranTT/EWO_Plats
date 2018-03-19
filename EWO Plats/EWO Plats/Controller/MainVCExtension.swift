@@ -27,9 +27,8 @@ extension MainVC {
         }
     }
     
-    //function to add multiple PINs on the MAP. Creating array of annotations using CLGeocoder method.
-    func addPins() {
-        var annotations = [MKPointAnnotation]()
+    //function to convert PIN's addresses to print CLLocationCoordinate2D(latitude: , longitude: )
+    func convertPins() {
         for pin in pins {
             getCoordinate(addressString: pin.title, completionHandler: { (location, error) in
                 if error == nil {
@@ -40,12 +39,27 @@ extension MainVC {
                     mkAnnotation.coordinate = coordinates
                     mkAnnotation.title = pin.title
                     mkAnnotation.subtitle = pin.pinURL
-                    annotations.append(mkAnnotation)
-                    self.mapView.addAnnotations(annotations)
+                    print("Pin(title: '\(String(describing: pin.title))', coordinates: \(String(describing: coordinates)), pinURL: '\(String(describing: pin.pinURL))'),")
                 }
             })
         }
     }
+    
+    
+    //function to add multiple PINs on the MAP. Creating array of annotations.
+    func addPins() {
+        var annotations = [MKPointAnnotation]()
+        for pin in pins {
+            let coordinates = pin.coordinates
+            let mkAnnotation = MKPointAnnotation()
+            mkAnnotation.coordinate = coordinates
+            mkAnnotation.title = pin.title
+            mkAnnotation.subtitle = pin.pinURL
+            annotations.append(mkAnnotation)
+            self.mapView.addAnnotations(annotations)
+        }
+    }
+    
     
     //mapView didSelect function grab selected PINs and Segue to WebView
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
@@ -58,6 +72,7 @@ extension MainVC {
         }
         performSegue(withIdentifier: "segueToDocumentVC", sender: view)
     }
+    
     
     //Segue override to transfer selected PIN's URL property
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

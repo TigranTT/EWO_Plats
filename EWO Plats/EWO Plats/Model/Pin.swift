@@ -12,10 +12,12 @@ import MapKit
 //class to set PIN's property
 class Pin: NSObject {
     var title: String
+    var coordinates: CLLocationCoordinate2D
     var pinURL: String
     
-    init(title: String, pinURL: String) {
+    init(title: String, coordinates: CLLocationCoordinate2D, pinURL: String) {
         self.title = title
+        self.coordinates = coordinates
         self.pinURL = pinURL
     }
     

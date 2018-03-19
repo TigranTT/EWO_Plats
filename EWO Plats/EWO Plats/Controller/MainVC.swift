@@ -36,8 +36,11 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         mapView.showsUserLocation = true
         mapView.tintColor = #colorLiteral(red: 0, green: 0.415807426, blue: 0.7040852904, alpha: 1)
         mapView.mapType = MKMapType(rawValue: 0)!
+        
         showHiddenButtons(show: false)
         showUserLocation()
+        // Function convertPins will be used only when converting locations addresses.
+        //convertPins()
         addPins()
         createTextFieldBorder(searchLocationTxt)
         self.hideKeyboardOnTap()
@@ -75,6 +78,12 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         mapView.mapType = MKMapType(rawValue: 4)!
         showHiddenButtons(show: false)
     }
+    
+    
+    @IBAction func refreshMap(_ sender: Any) {
+        addPins()
+    }
+    
     
     
     func showUserLocation() {

@@ -172,7 +172,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="EWO Plats" leftItemsSupplementBackButton="YES" id="bzy-99-6xW"/>
+                    <navigationItem key="navigationItem" title="EWO Plats" leftItemsSupplementBackButton="YES" id="bzy-99-6xW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="iuC-r0-tfD">
+                            <connections>
+                                <action selector="refreshMap:" destination="BYZ-38-t0r" id="TXI-OM-XbA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="I5H-9J-QrV" id="jQh-yY-cAe"/>
                         <outlet property="hiddenButtons" destination="65y-x9-8kd" id="TZZ-yX-KWc"/>
