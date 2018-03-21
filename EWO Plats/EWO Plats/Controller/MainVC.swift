@@ -80,12 +80,6 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     }
     
     
-    @IBAction func refreshMap(_ sender: Any) {
-        addPins()
-    }
-    
-    
-    
     func showUserLocation() {
         clLocationManager.requestWhenInUseAuthorization()
         let location = mapView.userLocation

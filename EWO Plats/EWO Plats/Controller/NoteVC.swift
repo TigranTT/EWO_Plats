@@ -24,7 +24,7 @@ class NoteVC: UIViewController {
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 235
         
-        navigationItem.title = "🗒 RW Info"
+        navigationItem.title = "🗒 ABWS Notes"
         //created UIBarButton on the right side
         let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(toAddNote(sender:)))
         navigationItem.rightBarButtonItem = rightButton
