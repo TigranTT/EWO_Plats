@@ -22,12 +22,14 @@ class NoteVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 235
+        tableView.estimatedRowHeight = 200
         
         navigationItem.title = "🗒 ABWS Notes"
         //created UIBarButton on the right side
-        let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(toAddNote(sender:)))
+        //let rightButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(toAddNote(sender:)))
+        let rightButton = UIBarButtonItem(title: "+🗒", style: .plain, target: self, action: #selector(toAddNote(sender:)))
         navigationItem.rightBarButtonItem = rightButton
+
         
     }
     
@@ -96,6 +98,7 @@ extension NoteVC: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
         let deleteAction = UITableViewRowAction(style: .destructive, title: "DELETE") { (rowAction, indexPath) in
             self.removeNote(atIndexPath: indexPath)
             self.fetchDataTableView()

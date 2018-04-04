@@ -16,13 +16,14 @@ let appDelegate = UIApplication.shared.delegate as? AppDelegate //creating prope
 class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UITextFieldDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
-    @IBOutlet weak var showUserLocationButton: UIButton!
     @IBOutlet weak var mapRegularViewButton: UIButton!
     @IBOutlet weak var mapSateliteViewButton: UIButton!
     @IBOutlet weak var map3DViewButton: UIButton!
     @IBOutlet weak var hiddenButtons: UIStackView!
     @IBOutlet weak var searchLocationTxt: UITextField!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
+    var menuShowing = true
     
     let clLocationManager = CLLocationManager()
     //Array of location addresses and corresponding URLs
@@ -37,7 +38,6 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         mapView.tintColor = #colorLiteral(red: 0, green: 0.415807426, blue: 0.7040852904, alpha: 1)
         mapView.mapType = MKMapType(rawValue: 0)!
         
-        showHiddenButtons(show: false)
         showUserLocation()
         // Function convertPins will be used only when converting locations addresses.
         //convertPins()
@@ -46,18 +46,28 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         self.hideKeyboardOnTap()
     }
     
-    func showHiddenButtons(show: Bool) {
-        UIView.animate(withDuration: 0.3, animations: {
+    override func viewDidAppear(_ animated: Bool) {
+        super .viewDidAppear(true)
+        showHiddenButtons(false)
+    }
+    
+    func showHiddenButtons(_ show: Bool) {
+        UIView.animate(withDuration: 0.4, animations: {
             if show {
-                self.hiddenButtons.transform = CGAffineTransform(translationX: 0, y: 3)
+                self.hiddenButtons.transform = CGAffineTransform(translationX: 0, y: 5)
             }else{
                 self.hiddenButtons.transform = CGAffineTransform(translationX: 0, y: -80)
             }
+            self.menuShowing = !self.menuShowing
         })
     }
     
-    @IBAction func showInfoButton(_ sender: Any) {
-        showHiddenButtons(show: true)
+    @IBAction func menuButtonPressed(_ sender: Any) {
+        if(menuShowing) {
+            showHiddenButtons(false)
+        }else{
+            showHiddenButtons(true)
+        }
     }
     
     @IBAction func showUserLocationButton(_ sender: Any) {
@@ -66,17 +76,17 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
     
     @IBAction func mapRegularViewButton(_ sender: Any) {
         mapView.mapType = MKMapType(rawValue: 0)!
-        showHiddenButtons(show: false)
+        showHiddenButtons(false)
     }
     
     @IBAction func mapSateliteViewButton(_ sender: Any) {
         mapView.mapType = MKMapType(rawValue: 2)!
-        showHiddenButtons(show: false)
+        showHiddenButtons(false)
     }
     
     @IBAction func map3DViewButton(_ sender: Any) {
         mapView.mapType = MKMapType(rawValue: 4)!
-        showHiddenButtons(show: false)
+        showHiddenButtons(false)
     }
     
     
@@ -100,7 +110,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
                 self.mapView.setRegion(region, animated: true)
             }else{
                 self.showAlert("oops!", message: "Location \"\(address)\" not found")
-                self.showHiddenButtons(show: true)
+                self.showHiddenButtons(true)
             }
         }
     }
@@ -109,7 +119,7 @@ class MainVC: UIViewController, MKMapViewDelegate, CLLocationManagerDelegate, UI
         if searchLocationTxt.resignFirstResponder() {
             searchLocation(address: searchLocationTxt.text!)
         }
-        showHiddenButtons(show: false)
+        showHiddenButtons(false)
         return true
     }
     
