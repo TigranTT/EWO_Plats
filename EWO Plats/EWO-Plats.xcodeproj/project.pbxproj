@@ -38,7 +38,7 @@
 		C4570E7B20088A650019277A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		C459941D202938C8006B4D5C /* NoteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteCell.swift; sourceTree = "<group>"; };
 		C4599421202ADC2B006B4D5C /* NoteVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteVC.swift; sourceTree = "<group>"; };
-		C48406172004A4DB007275BF /* EWO Plats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EWO Plats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C48406172004A4DB007275BF /* EWO-Plats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EWO-Plats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C484061A2004A4DB007275BF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C484061C2004A4DB007275BF /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		C484061F2004A4DB007275BF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -85,7 +85,7 @@
 		C484060E2004A4DB007275BF = {
 			isa = PBXGroup;
 			children = (
-				C48406192004A4DB007275BF /* EWO Plats */,
+				C48406192004A4DB007275BF /* EWO-Plats */,
 				C48406182004A4DB007275BF /* Products */,
 				C4570E7A20088A640019277A /* Frameworks */,
 			);
@@ -94,12 +94,12 @@
 		C48406182004A4DB007275BF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C48406172004A4DB007275BF /* EWO Plats.app */,
+				C48406172004A4DB007275BF /* EWO-Plats.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C48406192004A4DB007275BF /* EWO Plats */ = {
+		C48406192004A4DB007275BF /* EWO-Plats */ = {
 			isa = PBXGroup;
 			children = (
 				C484062C2004AB1D007275BF /* Model */,
@@ -109,7 +109,7 @@
 				C4485D4820155ECF00C75B68 /* Supporting Files */,
 				C48406262004A4DB007275BF /* Info.plist */,
 			);
-			path = "EWO Plats";
+			path = "EWO-Plats";
 			sourceTree = "<group>";
 		};
 		C484062C2004AB1D007275BF /* Model */ = {
@@ -148,9 +148,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C48406162004A4DB007275BF /* EWO Plats */ = {
+		C48406162004A4DB007275BF /* EWO-Plats */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C48406292004A4DB007275BF /* Build configuration list for PBXNativeTarget "EWO Plats" */;
+			buildConfigurationList = C48406292004A4DB007275BF /* Build configuration list for PBXNativeTarget "EWO-Plats" */;
 			buildPhases = (
 				C48406132004A4DB007275BF /* Sources */,
 				C48406142004A4DB007275BF /* Frameworks */,
@@ -160,9 +160,9 @@
 			);
 			dependencies = (
 			);
-			name = "EWO Plats";
+			name = "EWO-Plats";
 			productName = "EWO Plats";
-			productReference = C48406172004A4DB007275BF /* EWO Plats.app */;
+			productReference = C48406172004A4DB007275BF /* EWO-Plats.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -186,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C48406122004A4DB007275BF /* Build configuration list for PBXProject "EWO Plats" */;
+			buildConfigurationList = C48406122004A4DB007275BF /* Build configuration list for PBXProject "EWO-Plats" */;
 			compatibilityVersion = "Xcode 8.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -199,7 +199,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C48406162004A4DB007275BF /* EWO Plats */,
+				C48406162004A4DB007275BF /* EWO-Plats */,
 			);
 		};
 /* End PBXProject section */
@@ -373,7 +373,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27VJBKXGQJ;
-				INFOPLIST_FILE = "EWO Plats/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EWO-Plats/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.att.EWO-Plats";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -388,7 +388,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27VJBKXGQJ;
-				INFOPLIST_FILE = "EWO Plats/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EWO-Plats/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.att.EWO-Plats";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -400,7 +400,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C48406122004A4DB007275BF /* Build configuration list for PBXProject "EWO Plats" */ = {
+		C48406122004A4DB007275BF /* Build configuration list for PBXProject "EWO-Plats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C48406272004A4DB007275BF /* Debug */,
@@ -409,7 +409,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C48406292004A4DB007275BF /* Build configuration list for PBXNativeTarget "EWO Plats" */ = {
+		C48406292004A4DB007275BF /* Build configuration list for PBXNativeTarget "EWO-Plats" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C484062A2004A4DB007275BF /* Debug */,
